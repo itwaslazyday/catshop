@@ -94,6 +94,10 @@ function GoodItem ({good}: GoodItemProps): JSX.Element {
           {` ${good.giftQty ? getGiftSuffix(good.giftQty) : ''} в подарок`}
         </p>
         <p className='card__resume'>{good.resume ? good.resume.toLowerCase() : ''}</p>
+        <picture>
+          <source type="image/webp" srcSet="img/card-bg@1x.webp 1x, img/card-bg@2x.webp 2x"/>
+          <img className='card__image' src='img/card-bg@1x.png' srcSet='img/card-bg@2x.png 2x' width="368" height="360" alt={`Нямушка с ${good.taste}`}/>
+        </picture>
         <p className={`card__netweight ${checkBlockClassName('card__netweight')}`}>
           <span>{good.netWeight}</span>
           <span>кг</span>
